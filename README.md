@@ -44,8 +44,8 @@ Usuários são capazes de:
 ### Tecnologias
 
 - [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) 
-- [JS](https://www.javascript.com/)  
+- [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS) 
+- [JavaScript](https://www.javascript.com/)  
 
 ### Fontes
 
