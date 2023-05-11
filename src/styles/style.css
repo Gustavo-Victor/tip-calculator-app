@@ -1,0 +1,286 @@
+:root {
+    --strongCyan: hsl(172, 67%, 45%);
+    --darkCyan: hsl(183, 100%, 15%);
+    --darkGrayishCyan: hsl(186, 14%, 43%);
+    --grayishCyan: hsl(184, 14%, 56%);
+    --red: hsl(0, 70%, 60%);
+    --lightGrayishCyan: hsl(185, 41%, 84%);
+    --veryLightGrayishCyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%; 
+    height: 100vh; 
+    background-color: var(--lightGrayishCyan); 
+    font-family: 'Space Mono', monospace, sans-serif;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 1.1rem; 
+    margin-bottom: 2rem; 
+}
+
+/*app container*/
+.tip-calculator {
+    background-color: var(--white); 
+    display: flex;
+    flex-direction: column; 
+    padding: 2rem; 
+    border-radius: 1.4rem 1.4rem 0 0;
+}
+
+/*form*/
+.input-form label {
+    color: var(--darkGrayishCyan); 
+    font-weight: 700;
+    margin-bottom: 0.3rem; 
+    display: inline-block
+}
+
+.input-form input {
+    width: 100%;
+    border: none; 
+    outline: none;
+    padding: 5px 5px 5px 10px;
+    text-align: right;
+    font-size: 24px;
+    color: var(--darkCyan);
+    font-weight: bolder;
+    font-family: 'Space Mono', monospace, sans-serif;
+    background-color: var(--veryLightGrayishCyan);
+}
+
+.input-form .num-input {
+    background-position: 17px 15px; 
+    background-repeat: no-repeat;  
+    margin-bottom: 2rem;
+    border-radius: 4px;
+}   
+
+.input-form input:focus {
+    border: 2px solid var(--strongCyan);
+}
+
+.input-form #bill-input {
+    background-image: url('../images/icon-dollar.svg');    
+}
+
+/*tips section*/
+.input-form .tips {
+    width: 100%;
+    margin-top: 0.7rem; 
+    display: grid; 
+    grid-template-columns: repeat(2, 50%);
+    row-gap: 1rem;
+    column-gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.input-form .tips .tip{
+    background-color: var(--darkCyan);
+    color: var(--white); 
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-form .tips .tip.active-tip {
+    color: var(--darkCyan);
+    background-color: var(--strongCyan);
+    font-weight: bolder;
+}
+
+.input-form .tips #tip-custom > #custom-tip-input {
+    width: 100%; 
+    height: 48px;
+    border-radius: 4px;
+}
+
+.input-form .tips #tip-custom > #custom-tip-input::placeholder{
+    text-align: center;
+}
+
+
+/*number of people section*/
+.input-form .people-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-form .people-label .error {
+    color: var(--red);
+    display: none;
+}
+
+.input-form .people-label.invalid .error { 
+    display: block;
+}
+
+.input-form .people-label.invalid + input#num-people {
+    border: 2px solid var(--red);
+}
+
+
+.input-form #num-people{
+    background-image: url("../images/icon-person.svg");
+}
+
+
+/*result section*/
+.result {
+    background-color: var(--darkCyan);
+    color: var(--white); 
+    padding: 39px 21px; 
+    border-radius: 12px;
+    position: relative;
+}
+
+.result .info{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.7rem; 
+}
+
+.result .info .text .big{
+    font-size: 1rem; 
+    font-weight: bold;
+}
+
+.result .info .text .small{
+    font-size: 12px;
+    color: var(--grayishCyan); 
+    font-weight: 700;
+}
+
+.result .info .price{
+    font-size: 28px;
+    color: var(--strongCyan); 
+    font-weight: 700;
+}
+
+.result .reset {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    color: var(--darkCyan);
+    background-color: var(--strongCyan);
+    width: 100%; 
+    border: none; 
+    outline: none; 
+    margin-top: auto; 
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 9px 0;
+    position: relative;
+    bottom: 0%; 
+    font-size: 20px;
+    transition: all 0.1s ease;
+}
+
+.result .reset:hover {
+    background-color: hsl(172, 67%, 65%);
+}
+
+/*attribution*/
+.attribution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; 
+    font-size: 12px;
+    color: var(--darkGrayishCyan);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--darkCyan);
+    transition: 0.1s ease;
+}
+
+.attribution a:hover {
+    color: var(--strongCyan);
+}
+
+
+
+/*media queries*/
+@media only screen and (min-width: 768px) {
+    /*body*/
+    body {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*body inputs*/
+    input {
+        display: block;
+        padding: 9px; 
+        background-position: 17px 18px; 
+    }
+
+    /*app container*/
+    .tip-calculator {
+        width: 80vw;
+        max-width: 990px; 
+        flex-direction: row;
+        border-radius: 1.4rem;
+        gap: 3rem;
+        padding: 2rem; 
+        min-height: 470px;
+    }
+
+    /*form section*/
+    .input-form {
+        flex: 1;
+    }
+
+    .input-form .tips {
+        width: 100%;
+        grid-template-columns: repeat(3, 31%);
+    }
+
+    /*result section*/
+    .result {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .result .info .text .big{
+        font-size: 1.2rem; 
+    }
+    
+    .result .info .text .small{
+        font-size: 0.9rem;
+    }
+    
+    .result .info .price{
+        font-size: 40px;
+    }
+
+    /*attribution*/
+    .attribution { 
+        margin: 0.8rem 0;
+        padding-bottom: 0.4rem;
+    }
+}
